@@ -2,6 +2,25 @@
 
 A React component library for building interactive documentation layouts with code examples, tables, tags, and automatic table of contents support.
 
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/npm/l/react-doc-helper?color=%238ab4f8" alt="License: MIT">
+  </a>
+  <a href="https://www.npmjs.com/package/react-doc-helper">
+    <img src="https://img.shields.io/npm/v/react-doc-helper.svg?color=%23c1a8e2" alt="NPM Version">
+  </a>
+  <!-- <a href="https://github.com/santushnath/react-doc-helper/actions?query=workflow%3A%22Continuous+Integration%22"> -->
+    <!-- <img src="https://img.shields.io/github/actions/workflow/status/santushnath/react-doc-helper/cd.yml?color=%238ab4f8" alt="Build Status"> -->
+  <!-- </a> -->
+  <a href="https://prettier.io">
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?color=%23c1a8e2" alt="Code Style: Prettier">
+  </a>
+  <a href="https://bundlephobia.com/result?p=react-doc-helper@latest">
+    <img src="https://img.shields.io/bundlephobia/minzip/react-doc-helper?color=%238ab4f8&label=gzip%20size" alt="Gzip Size">
+  </a>
+</p>
+
+
 [![React Doc Helper](https://raw.githubusercontent.com/santushnath/react-doc-helper/refs/heads/main/thumbnail.png)](https://codesandbox.io/p/sandbox/9vt5r7)
 
 ## Live Demo
