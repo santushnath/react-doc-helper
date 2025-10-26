@@ -2,6 +2,8 @@
 
 A React component library for building interactive documentation layouts with code examples, tables, tags, and automatic table of contents support.
 
+[![React Doc Helper](./thumbnail.png)](https://codesandbox.io/p/sandbox/9vt5r7)
+
 ## Live Demo
 
 - [Sandbox Demo](https://codesandbox.io/p/sandbox/9vt5r7)
