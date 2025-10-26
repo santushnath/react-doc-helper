@@ -1,0 +1,86 @@
+{
+  "version": "1.0.15",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build:css": "sass src/scss:dist/css --no-source-map",
+    "watch:css": "sass --watch src/scss:src/css --no-source-map",
+    "start": "tsdx watch & npm run watch:css",
+    "build": "tsdx build && npm run build:css",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "npm run build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {
+    "react": ">=15 <=18",
+    "react-dom": ">=16.8 <=18"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "name": "react-doc-helper",
+  "author": "Santush Deb Nath <santush.lu.bd@gmail.com>",
+  "description": "A React component library for building interactive documentation layouts with code examples, tables, tags, and automatic table of contents support.",
+  "module": "dist/react-doc-helper.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/react-doc-helper.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-doc-helper.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@size-limit/preset-small-lib": "^11.1.2",
+    "@types/react": "^18.2.74",
+    "@types/react-copy-to-clipboard": "^5.0.7",
+    "@types/react-dom": "^18.2.24",
+    "@types/react-scroll": "^1.8.10",
+    "husky": "^9.0.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.93.2",
+    "size-limit": "^11.1.2",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.6.2",
+    "typescript": "^3.9.10"
+  },
+  "dependencies": {
+    "react-code-blocks": "^0.1.6",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-scroll": "^1.9.3"
+  },
+  "keywords": [
+    "react",
+    "react-components",
+    "documentation",
+    "doc-helper",
+    "code-block",
+    "code-snippet",
+    "syntax-highlighting",
+    "table-of-contents",
+    "docs",
+    "developer-tools",
+    "typescript"
+  ]
+}
