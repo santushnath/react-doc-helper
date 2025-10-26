@@ -65,17 +65,14 @@ export default function App() {
       }}
     >
       <DHContainer title="Documentation Example">
-        <DHBlock id="section1" title="Introduction">
-          <p>This is the introduction section.</p>
+        <DHBlock id="section1" title="Introduction" content="This is the introduction section.">
           <DHCode
             code={`console.log("Hello World");`}
             lang="javascript"
           />
         </DHBlock>
 
-        <DHBlock id="section2" title="Usage">
-          <p>Here's how to use the package.</p>
-        </DHBlock>
+        <DHBlock id="section2" title="Usage" content="Here's how to use the package." />
       </DH>
     </DHProvider>
   );
