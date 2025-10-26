@@ -4,6 +4,7 @@ import React, {
   ReactNode,
   useState,
   useEffect,
+  FC,
 } from 'react';
 
 export interface DHSettings {
@@ -16,20 +17,19 @@ const defaultSettings: DHSettings = {
   codeBlockTheme: 'github',
 };
 
-const DHContext = createContext<{
+interface DHContextType {
   settings: DHSettings;
   setSettings: (settings: DHSettings) => void;
-}>({
-  settings: defaultSettings,
-  setSettings: () => {},
-});
+}
+
+const DHContext = createContext<DHContextType | undefined>(undefined);
 
 interface DHProviderProps {
   children: ReactNode;
   settings?: DHSettings;
 }
 
-export const DHProvider: React.FC<DHProviderProps> = ({
+export const DHProvider: FC<DHProviderProps> = ({
   children,
   settings: initialSettings,
 }) => {
@@ -38,9 +38,8 @@ export const DHProvider: React.FC<DHProviderProps> = ({
     ...initialSettings,
   });
 
-  useEffect(() => {
+  useEffect((): void => {
     if (initialSettings && typeof initialSettings === 'object') {
-      console.log('initialSettings', typeof initialSettings);
       setSettings((prevState) => ({ ...prevState, ...initialSettings }));
     }
   }, [initialSettings]);
@@ -53,14 +52,10 @@ export const DHProvider: React.FC<DHProviderProps> = ({
 };
 
 // Hook for easier access
-export const useDHContext = () => {
+export const useDHContext = (): DHContextType => {
   const context = useContext(DHContext);
-
   if (!context) {
-    throw new Error(
-      'useDHContext should be used within the DHContext provider!'
-    );
+    throw new Error('useDHContext must be used within a DHProvider');
   }
-
   return context;
 };

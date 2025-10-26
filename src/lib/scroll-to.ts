@@ -1,11 +1,11 @@
-import { scroller } from "react-scroll";
+import { scroller } from 'react-scroll';
 
-interface ScrollConfig {
+export interface ScrollConfig {
   duration?: number;
   delay?: number;
   smooth?: boolean | string;
   offset?: number;
-}
+} 
 
 /**
  * Creates a scroll handler function for smooth scrolling to a specific section.
@@ -15,19 +15,18 @@ interface ScrollConfig {
  * @returns A function that can be called directly or passed as an event handler
  */
 const scrollTo = (sectionName: string, config: ScrollConfig = {}) => {
-  return (e?: React.MouseEvent | Event) => {
-    if (e && typeof e.preventDefault === "function") {
+  return (e?: React.MouseEvent | Event): void => {
+    if (e && typeof e.preventDefault === 'function') {
       e.preventDefault();
     }
 
     scroller.scrollTo(sectionName, {
       duration: 400,
       delay: 0,
-      smooth: "easeInOutQuart",
+      smooth: 'easeInOutQuart',
       ...config,
     });
   };
 };
 
 export default scrollTo;
-export type { ScrollConfig };

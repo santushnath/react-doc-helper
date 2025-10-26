@@ -14,7 +14,7 @@
 }
 .doc-helper__container {
   display: flex;
-  gap: 2rem;
+  gap: 2rem; 
   flex-direction: column;
 }
 @media (min-width: 960px) {

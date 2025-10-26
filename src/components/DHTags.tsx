@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-// import { debounce } from 'lodash';
 
-const CopiedIcon = ({ className }: { className?: string }) => (
+const CopiedIcon: FC<{ className?: string }> = ({ className }) => (
   <svg
     className={className}
     viewBox="0 0 384 512"
@@ -14,7 +13,7 @@ const CopiedIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const CopyIcon = ({ className }: { className?: string }) => (
+const CopyIcon: FC<{ className?: string }> = ({ className }) => (
   <svg
     className={className}
     viewBox="0 0 384 512"
@@ -33,21 +32,17 @@ export interface DHTagsProps {
   size?: 'default' | 'sm';
 }
 
-const DHTags: React.FC<DHTagsProps> = ({
+export const DHTags: FC<DHTagsProps> = ({
   tags,
   showCopyIcon = true,
-  className,
+  className = '',
   size = 'default',
 }) => {
   const [copied, setCopied] = useState<string | null>(null);
-  // const copiedDebounce = useCallback(
-  //   debounce(() => setCopied(null), 5000),
-  //   []
-  // );
 
-  const onCopy = (value: string) => {
+  const onCopy = (value: string): void => {
     setCopied(value);
-    // copiedDebounce();
+    setTimeout(() => setCopied(null), 3000); // reset copied after 3s
   };
 
   return (
@@ -78,4 +73,3 @@ const DHTags: React.FC<DHTagsProps> = ({
 };
 
 DHTags.displayName = 'DHTags';
-export { DHTags };
