@@ -35,6 +35,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "name": "react-doc-helper",
   "author": "Santush Deb Nath <santush.lu.bd@gmail.com>",
   "description": "A React component library for building interactive documentation layouts with code examples, tables, tags, and automatic table of contents support.",
